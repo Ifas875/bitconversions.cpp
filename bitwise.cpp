@@ -4,21 +4,25 @@
 #include <algorithm>
 
 
-int main(){
-  int a = 510;
-  int b = a & 7;
-  std::cout << a << " " << b << std::endl;
-
+std::string intToOctal(int sample){
   std::string answer;
-
-  while (a>0){
-    std::cout << a << std::endl;
-    int temp = a & 7;
-    answer += std::to_string(temp);
-    a = a >> 3;
+  if (sample == 0 || sample == 1)
+    return std::to_string(sample);
+  else{
+    while(sample > 0){
+      int temp = sample & 7;
+      answer += std::to_string(temp);
+      sample = sample >> 3;
+    }
+    std::reverse(answer.begin(), answer.end());
+    return answer;
   }
-  std::reverse(answer.begin(), answer.end());
+}
 
-  std::cout << answer << std::endl;
+
+int main(){
+  int a = 2;
+
+  std::cout << intToOctal(a) << std::endl;
   return 0;
 }
