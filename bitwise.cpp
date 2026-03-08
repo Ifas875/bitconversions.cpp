@@ -20,8 +20,13 @@ std::string intToOctal(int sample){
 }
 
 
+std::string intToHex(int sample){
+
+}
+
+
 int main(){
-  int a = 2;
+  int a = 534;
 
   std::cout << intToOctal(a) << std::endl;
   return 0;
