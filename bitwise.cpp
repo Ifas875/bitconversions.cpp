@@ -57,10 +57,30 @@ std::string intToHex(int sample){
 }
 
 
+std::string intToBin(int sample){
+  std::string answer;
+  int bitcount = 0;
+  if (sample == 0 || sample == 1)
+    return std::to_string(sample);
+  else{
+    while(sample > 0){
+      int temp = sample & 1;
+      if(temp > 0) bitcount++;
+      answer += std::to_string(temp);
+      sample = sample >> 1;
+    }
+    std::reverse(answer.begin(), answer.end());
+    std::cout << "bitcount is: " << bitcount << std::endl;
+    return answer;
+  }
+}
+
+
 int main(){
   int a = 16;
 
   std::cout << intToOctal(a) << std::endl;
   std::cout << intToHex(a) << std::endl;
+  std::cout << intToBin(a) << std::endl;
   return 0;
 }
