@@ -83,4 +83,5 @@ int main(){
   std::cout << intToHex(a) << std::endl;
   std::cout << intToBin(a) << std::endl;
   return 0;
+  
 }
