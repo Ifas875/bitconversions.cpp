@@ -71,6 +71,10 @@ std::string intToBin(int sample){
     }
     std::reverse(answer.begin(), answer.end());
     std::cout << "bitcount is: " << bitcount << std::endl;
+    if (bitcount % 2 == 1) 
+      std::cout << "Bit parity is Odd" << std::endl;
+    else
+      std::cout << "Bit parity is Even" << std::endl;
     return answer;
   }
 }
@@ -83,5 +87,5 @@ int main(){
   std::cout << intToHex(a) << std::endl;
   std::cout << intToBin(a) << std::endl;
   return 0;
-  
+
 }
